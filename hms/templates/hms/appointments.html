@@ -1,0 +1,86 @@
+{% extends 'C:\Users\rahul_welhz6c\OneDrive\Desktop\joker pro\school\hospital_management\hms\templates\hms\base.html' %}
+
+{% block content %}
+    <h1>Appointments</h1>
+    <a href="{% url 'add_appointment' %}">Add Appointment</a>
+    <ul>
+        {% for appointment in appointments %}
+            <li class="appointment-card">{{ appointment.patient.name }} with Dr. {{ appointment.doctor.name }} on {{ appointment.appointment_date }}</li>
+        {% endfor %}
+    </ul>
+    <style>
+        /* Basic styling */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto; /* Center the list horizontally */
+  width: 70%; /* Adjust width as needed */
+}
+
+.appointment-item {  /* Class for styling appointments */
+  padding: 10px;
+  margin: 5px;
+  border-bottom: 1px solid #ccc; /* Add a subtle border */
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none; /* Remove underline */
+  padding: 10px;
+  display: inline-block; /* Allow links to sit side-by-side */
+}
+
+a:hover {
+  color: #333;
+}
+/* Basic styling */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+}
+
+.appointments {
+  display: flex;
+  flex-wrap: wrap;  /* Allow cards to wrap to next line if needed */
+  justify-content: space-around; /* Space cards evenly */
+  margin: 20px auto;
+  width: 80%; /* Adjust width as needed */
+}
+
+.appointment-card {
+    display: inline-block;
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 280px; /* Adjust width as needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+}
+
+/* Content within the card */
+.appointment-card h3,
+.appointment-card p {
+  margin: 5px 0;
+}
+
+
+    </style>
+    {% endblock %}

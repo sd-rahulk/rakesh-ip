@@ -1,0 +1,59 @@
+{% extends 'C:\Users\rahul_welhz6c\OneDrive\Desktop\joker pro\school\hospital_management\hms\templates\hms\base.html' %}
+
+{% block content %}
+    <h1>Patients</h1>
+    <a href="{% url 'add_patient' %}">Add Patient</a>
+    <ul>
+        {% for patient in patients %}
+            <li class="patient-card">{{ patient.name }} - Age: {{ patient.age }}</li>
+        {% endfor %}
+    </ul>
+    <!-- <a href="{% url 'home' %}">Home</a> -->
+    <style>
+        /* Basic styling */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto; /* Center the list horizontally */
+  width: 50%; /* Adjust width as needed */
+}
+
+.patient-card {
+    display: inline-block; /* Display cards side-by-side */
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.patient-card:hover {
+  background-color: #e0e0e0;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none; /* Remove underline */
+  padding: 10px;
+  display: inline-block; /* Allow links to sit side-by-side */
+}
+
+a:hover {
+  color: #333;
+}
+
+    </style>
+{% endblock %}

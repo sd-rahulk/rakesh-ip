@@ -1,0 +1,19 @@
+{% extends 'C:\Users\rahul_welhz6c\OneDrive\Desktop\joker pro\school\hospital_management\hms\templates\hms\base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="../../static/css/doc.css">
+<h2>Doctors</h2>
+<form method="get" action="{% url 'doctors' %}">
+    <input type="text" name="q" value="{{ query|default:'' }}" placeholder="Search doctors...">
+    <button type="submit">Search</button>
+</form>
+<a href="{% url 'add_doctor' %}">Add Doctor</a>
+<ul>
+    {% for doctor in doctors %}
+        <li class="doctor-card">  {{ doctor.name }} - {{ doctor.specialization }}
+            <a href="{% url 'edit_doctor' doctor.pk %}">Edit</a>
+            <a href="{% url 'delete_doctor' doctor.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

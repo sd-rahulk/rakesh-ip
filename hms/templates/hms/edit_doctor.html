@@ -1,0 +1,85 @@
+{% extends 'C:\Users\rahul_welhz6c\OneDrive\Desktop\joker pro\school\hospital_management\hms\templates\hms\base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Edit Doctor</h2>
+    <form method="post" class="animated-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-animate">Save</button>
+    </form>
+    <a href="{% url 'list_doctors' %}" class="btn btn-secondary upper">Back to Doctors</a>
+</div>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .animated-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 0 auto;
+    height: 350px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .animated-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .animated-form input,
+  .animated-form select,
+  .animated-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-primary {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }
+  
+  .btn-secondary {
+    background-color: #ccc; /* Light gray */
+    color: black;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #bbb; /* Slightly darker gray on hover */
+  }
+  .upper{
+    top: -60px;
+    position: relative;
+  }
+</style>
+{% endblock %}

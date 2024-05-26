@@ -1,0 +1,14 @@
+{% extends 'C:\Users\rahul_welhz6c\OneDrive\Desktop\joker pro\school\hospital_management\hms\templates\hms\base.html' %}
+
+{% block content %}
+<div class="container">
+    <link rel="stylesheet" href="../../static/css/add_doc.css">
+    <h2>Add Doctor</h2>
+    <form method="post" class="animated-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-animate">Add</button>
+    </form>
+    <a href="{% url 'list_doctors' %}" class="btn btn-secondary upper">Back to Doctors</a>
+</div>
+{% endblock %}
